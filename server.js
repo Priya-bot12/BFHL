@@ -1,7 +1,11 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 
 app.use(express.json()); // Middleware to parse JSON
+app.use(cors({
+    origin : "*"
+}))
 
 // Store the last received data (temporary storage)
 let lastProcessedData = {};
